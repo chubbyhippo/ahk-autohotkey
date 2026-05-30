@@ -1,5 +1,4 @@
-CapsLock::Ctrl
-Ctrl::CapsLock
+CapsLock::LCtrl
 
 LControl::
 {
@@ -9,4 +8,4 @@ LControl::
     Send "{Alt Up}"
 }
 
-+Ctrl::CapsLock
++LControl::CapsLock
