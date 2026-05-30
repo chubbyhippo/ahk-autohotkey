@@ -10,4 +10,4 @@ LControl::
 
 +LControl::CapsLock
 
-RCtrl::Alt
+RAlt::Ctrl
