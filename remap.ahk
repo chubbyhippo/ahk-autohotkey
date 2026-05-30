@@ -9,3 +9,5 @@ LControl::
 }
 
 +LControl::CapsLock
+
+RCtrl::Alt
