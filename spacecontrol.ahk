@@ -1,7 +1,11 @@
-$Space::Send("{LCtrl down}")
-$Space up:: {
-    Send("{LCtrl up}")
-    If (A_PriorKey = "Space") {
+$Space::Send("{LCtrl Down}")
+
+$Space Up::
+{
+    Send("{LCtrl Up}")
+
+    if (A_PriorKey == "Space")
+    {
         Send("{Space}")
     }
 }
