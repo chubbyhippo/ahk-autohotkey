@@ -10,8 +10,6 @@ LControl::
 
 +LControl::CapsLock
 
-RAlt::Ctrl
-
 $Space::Send("{LCtrl Down}")
 
 $Space Up::
