@@ -22,14 +22,38 @@ LControl::
 
 +LControl::CapsLock
 
-$Space::Send "{LCtrl Down}"
+spaceIsCtrl := false
 
-$Space Up::
+*$Space::
 {
-    Send "{LCtrl Up}"
+    global spaceIsCtrl
+
+    if !spaceIsCtrl
+    {
+        spaceIsCtrl := true
+        Send "{RCtrl Down}"
+    }
+}
+
+*$Space Up::
+{
+    global spaceIsCtrl
+
+    if spaceIsCtrl
+    {
+        Send "{RCtrl Up}"
+        spaceIsCtrl := false
+    }
 
     if A_PriorKey = "Space"
     {
         Send "{Space}"
     }
+}
+
+OnExit ReleaseModifiers
+
+ReleaseModifiers(*)
+{
+    Send "{RCtrl Up}{LCtrl Up}{LControl Up}{RControl Up}"
 }
