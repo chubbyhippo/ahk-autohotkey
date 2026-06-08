@@ -1,10 +1,12 @@
 SetCapsLockState "AlwaysOff"
 
+spaceIsCtrl := false
+
 CapsLock::
 {
-    Send "{LControl Down}"
+    Send "{LCtrl Down}"
     KeyWait "CapsLock"
-    Send "{LControl Up}"
+    Send "{LCtrl Up}"
 
     if A_PriorKey = "CapsLock"
     {
@@ -12,7 +14,7 @@ CapsLock::
     }
 }
 
-LControl::
+LCtrl::
 {
     Send "{Shift Down}"
     Send "{Alt Down}"
@@ -20,9 +22,7 @@ LControl::
     Send "{Alt Up}"
 }
 
-+LControl::CapsLock
-
-spaceIsCtrl := false
++LCtrl::CapsLock
 
 *$Space::
 {
@@ -31,7 +31,7 @@ spaceIsCtrl := false
     if !spaceIsCtrl
     {
         spaceIsCtrl := true
-        Send "{RCtrl Down}"
+        Send "{LCtrl Down}"
     }
 }
 
@@ -41,7 +41,7 @@ spaceIsCtrl := false
 
     if spaceIsCtrl
     {
-        Send "{RCtrl Up}"
+        Send "{LCtrl Up}"
         spaceIsCtrl := false
     }
 
@@ -55,5 +55,5 @@ OnExit ReleaseModifiers
 
 ReleaseModifiers(*)
 {
-    Send "{RCtrl Up}{LCtrl Up}{LControl Up}{RControl Up}"
+    Send "{LCtrl Up}{RCtrl Up}{Shift Up}{Alt Up}{LWin Up}{RWin Up}"
 }
