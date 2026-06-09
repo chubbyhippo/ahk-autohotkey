@@ -16,10 +16,7 @@ CapsLock::
 
 LCtrl::
 {
-    Send "{Shift Down}"
-    Send "{Alt Down}"
-    Send "{Shift Up}"
-    Send "{Alt Up}"
+    Send "#{Space}"
 }
 
 +LCtrl::CapsLock
